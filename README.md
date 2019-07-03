@@ -21,7 +21,7 @@ structures that should be easy to utilize in any project.
 
 # Roadmap
 ---
-* Abstract base class tree/generic-tree (Week 2).
+* Base class tree/generic-tree (Week 2).
 * Binary Trees at least mostly implemented (Week 3).
 * 2-3-4 Trees implemented (Week 6).
 * Some other advanced tree structure by the end of the term (Week 8).

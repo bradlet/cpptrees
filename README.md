@@ -5,7 +5,7 @@ compatible with the GNU compiler.
 
 Copyright © 2019 Bradley Thompson
 
-[Licensed under the "MIT license"]
+[Licensed under the "MIT license", please reference LICENSE for more details.]
 
 # Overview
 ---

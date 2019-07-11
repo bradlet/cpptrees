@@ -1,6 +1,7 @@
 cpptrees
 =======
-A tree data structure library for c++.
+A tree data structure library for c++, made to be
+compatible with the GNU compiler.
 
 Copyright © 2019 Bradley Thompson
 

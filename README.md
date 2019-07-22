@@ -22,8 +22,10 @@ structures that should be easy to utilize in any project.
 
 # Roadmap
 ---
-* Base class tree/generic-tree (Week 2).
-* Binary Trees at least mostly implemented (Week 3).
+* BST mostly complete (end of week 4).
+  1. At this point, either refactor and make a generic tree base, or:
 * 2-3-4 Trees implemented (Week 6).
-* Some other advanced tree structure by the end of the term (Week 8).
+* By end of the term:
+  1. R-B Tree implemented, or
+  2. refactored to be a tree heirarchy.
 

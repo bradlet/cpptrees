@@ -10,14 +10,13 @@ Copyright © 2019 Bradley Thompson
 # Overview
 ---
 This library will contain tree structure class templates.
-These should be entirely compatible with the c++ containers
-library. C++ doesn't have interfaces, so this project aims
-to get as close as possible by implementing all functionality
-of any container, and allowing differently typed data through
-templates. 
+These should act as an expansion to the C Standard Template
+Library.
 
-The end goal is to provide efficiently implemented tree data
-structures that should be easy to utilize in any project.
+The end product should provide most of the common
+functionality in an STL container. Therefore, the 
+end goal will be efficiently implemented tree class
+templates that should be easy to utilize in any project.
 
 
 # Roadmap

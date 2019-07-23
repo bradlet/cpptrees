@@ -7,9 +7,6 @@ using namespace std;
 
 int main()
 {
-  class subtree<int> a;
-
-  a.set_data();
 
   return 0;
 }

@@ -5,9 +5,8 @@ compatible with the GNU compiler.
 
 Copyright © 2019 Bradley Thompson
 
-[Licensed under the "MIT license", please reference LICENSE for more details.]
 
-# Overview
+## Overview
 ---
 This library will contain tree structure class templates.
 These should act as an expansion to the C Standard Template
@@ -19,7 +18,7 @@ end goal will be efficiently implemented tree class
 templates that should be easy to utilize in any project.
 
 
-# Roadmap
+## Roadmap
 ---
 * BST mostly complete (end of week 4).
   1. At this point, either refactor and make a generic tree base, or:
@@ -28,3 +27,7 @@ templates that should be easy to utilize in any project.
   1. R-B Tree implemented, or
   2. refactored to be a tree heirarchy.
 
+
+## License
+--- 
+Licensed under the "MIT license", please reference LICENSE for more details.

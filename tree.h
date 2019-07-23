@@ -1,4 +1,8 @@
 //Bradley Thompson
+
+/*  This program is released under the "MIT Lecense".
+    Please refer to the file LICENSE for more information. */ 
+
 //This file contains the generic tree class definition.
 
 #include <iostream>

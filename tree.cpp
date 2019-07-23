@@ -1,4 +1,8 @@
 //Bradley Thompson
+
+/*  This program is released under the "MIT Lecense".
+    Please refer to the file LICENSE for more information. */ 
+
 //This file is the implementation file for a binary tree.
 //It doesn't have a main and must be included in the
 //header file so that the compiler can "see" the member

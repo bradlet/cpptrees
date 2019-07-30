@@ -3,10 +3,9 @@
 /*  This program is released under the "MIT Lecense".
     Please refer to the file LICENSE for more information. */ 
 
-//This file contains the generic tree class definition.
-
 #include <iostream>
-#include <cstdlib>
+
+//This file contains the generic tree class definition.
 
 /* Eventually, generic tree(?):
 template <typename T>
@@ -26,24 +25,30 @@ template <class T>
 class BinaryTree
 {
   public:
-    BinaryTree(); ~BinaryTree();
-    //Iterators
+    BinaryTree(); 
+    ~BinaryTree();
+    //operator=
 
-    //Capacity
     bool empty(); 
-  
-    //Element Access & Modifiers
+    int size();
+    int max_size();
     int insert(T);  
+    int clear();
+
+    void test_display();
 
   private:
-    struct node {
+    struct node {  //T needs default constructor/destructor.
       T data;
       node* left = NULL;
       node* right = NULL;
     } *root;
+    int num_nodes;
 
-    //Helper Functions:
-    int insert_helper(node*&, T);
+    int insert(node*&, T);
+    int height(node*);
+    int clear(node*&);
+    void test_display(node*);
 };
 
 #include "tree.cpp"

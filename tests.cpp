@@ -6,7 +6,7 @@
 //cpptrees - a tree structure library.
 //Dev start date: 07/03/2019
 
-#include <cpptrees.so>
+#include "tree.h"
 using namespace std;
 
 void testBinaryTree()

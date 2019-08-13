@@ -7,7 +7,7 @@ Copyright © 2019 Bradley Thompson
 
 
 ## Overview
----
+
 This library will contain tree structure class templates.
 These should mimic the C Standard Template Library's 
 Containers.

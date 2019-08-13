@@ -9,8 +9,8 @@ Copyright © 2019 Bradley Thompson
 ## Overview
 ---
 This library will contain tree structure class templates.
-These should act as an expansion to the C Standard Template
-Library.
+These should mimic the C Standard Template Library's 
+Containers.
 
 The end product should provide most of the common
 functionality in an STL container. Therefore, the 
@@ -20,12 +20,11 @@ templates that should be easy to utilize in any project.
 
 ## Roadmap
 ---
-* BST mostly complete (end of week 4).
-  1. At this point, either refactor and make a generic tree base, or:
-* 2-3-4 Trees implemented (Week 6).
-* By end of the term:
-  1. R-B Tree implemented, or
-  2. refactored to be a tree heirarchy.
+* BST complete by end of term
+---
+#### Development planned to be implemented after Summer 2019:
+* Refactor to use a single-inheritance hierarchy
+* 2-3-4 Trees implemented.
 
 
 ## License

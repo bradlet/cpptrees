@@ -5,12 +5,10 @@
 
 #include <iostream>
 
-//This file contains the Binary Search Tree class definition.
-
-/*
-First phase container methods to provide:
-(maybe)rbegin, rend, erase,
-*/
+//This file contains the Binary Search Tree class definition,
+//as well as the Iterator for that class template. That iterator,
+//BinaryIterator, is essentially a smart pointer that knows how to
+//iterate through tha tree.
 
 template <class T>
 class BinaryTree;

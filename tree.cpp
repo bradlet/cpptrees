@@ -73,6 +73,9 @@ BinaryIterator<T>& BinaryIterator<T>::operator--()
 }
 
 
+/* Binary Tree */
+
+
 template <class T>
 BinaryTree<T>::BinaryTree(): root(NULL), num_nodes(0){}
 
@@ -219,16 +222,18 @@ int BinaryTree<T>::count(T & data) const
   return count(root, data);
 }
 
-/*
 //Removal functions, can take args of type T, an iterator, or
 //a range of elements to erase via a start and end iterator.
 template <class T>
 int erase(T & to_remove)
 {
-  bstNode<T> *found = *find(to_remove);
-   
+  //find the node containing to remove (gives iterator)
+  //  If it aint there return 0
+  //if !right : left goes here
+  //else if right but !right->left : right goes here
+  //else : go to right's left till ->left == NULL and that goes here.
 }
-*/
+
 
 /* Helpers */
 

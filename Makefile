@@ -13,4 +13,4 @@ tests:
 	$(CC) $(CPPFLAGS) tests.cpp -o $@ -lc
 
 clean:
-	rm *.so
+	rm *.so tests

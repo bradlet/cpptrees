@@ -7,7 +7,7 @@ Copyright © 2019 Bradley Thompson
 
 
 ## Overview
----
+
 This library will contain tree structure class templates.
 These should mimic the C Standard Template Library's 
 Containers.
@@ -26,7 +26,7 @@ The BST class "BinaryTree" is essentially a set and has the same functionality.
 * Objects of this class template require a type to be denoted, which is the
 type of data that will be stored in the node structures within the tree.
 
-> Example: BinaryTree<int> numTree;
+> Example: BinaryTree\<int\> numTree;
 
 * find, begin, end, cbegin and cend all return BinaryIterator objects by
 reference. Use these if you want to be able to iterate through the tree

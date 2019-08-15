@@ -82,21 +82,20 @@ BinaryTree<T>::BinaryTree(): root(NULL), num_nodes(0){}
 template <class T>
 BinaryTree<T>::~BinaryTree()
 {
-  clear(root); 
+  clear();
 }
 
 //Destructive -- overwrites this object's contents
 template <class T>
-BinaryTree<T>& BinaryTree<T>::operator=(BinaryTree<T> *& copy)
+BinaryTree<T>& BinaryTree<T>::operator=(BinaryTree<T> & copy)
 {
-  if (this == copy)
+  if (this == &copy)
     return *this;
-  clear(root);
-
-  if (copy_tree(root, NULL, copy->root) != copy->num_nodes)
+  clear();
+  if (copy_tree(root, NULL, copy.root) != copy.num_nodes)
     cerr << "Assignment Failed.\n"; 
   else
-    num_nodes = copy->num_nodes;
+    num_nodes = copy.num_nodes;
   
   return *this;
 }
@@ -197,21 +196,21 @@ int BinaryTree<T>::insert(T to_insert)
 template <class T>
 void BinaryTree<T>::swap(BinaryTree<T> & swap_with)
 {
-  bstNode<T> *hold = root;
-  root = swap_with.root;
-  swap_with.root = hold;
+  bstNode<T> *hold = swap_with.root;
+
+  SWAP(num_nodes, swap_with.num_nodes);
+  swap_with.root = root;
+  root = hold;
 }
 
 //Deletes all bstNodes in the tree
 //returns # of bstNodes deleted.
 template <class T>
-int BinaryTree<T>::clear()
+void BinaryTree<T>::clear()
 {
-  int deleted = clear(root);
-  num_nodes -= deleted;
-  if (num_nodes > 0)
+  num_nodes -= clear(root);
+  if (num_nodes != 0)
     cerr << "Nodes deleted != previous tree size\n";
-  return deleted;
 }
 
 //returns number of nodes containing the same data of
@@ -256,7 +255,7 @@ int BinaryTree<T>::copy_tree(bstNode<T>* & root, bstNode<T>* parent, bstNode<T>*
 {
   if (copy == NULL)
   {
-    root == NULL;
+    root = NULL;
     return 0;
   }
   root = new bstNode<T>;
@@ -270,7 +269,7 @@ int BinaryTree<T>::copy_tree(bstNode<T>* & root, bstNode<T>* parent, bstNode<T>*
 template<class T>
 int BinaryTree<T>::insert(bstNode<T>* & root, bstNode<T>* parent, T to_insert)
 {
-  if (!root)
+  if (root == NULL)
   {
     root = new bstNode<T>;
     root->data = to_insert; //Assumption: = deep copies 

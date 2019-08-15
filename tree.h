@@ -10,6 +10,8 @@
 //BinaryIterator, is essentially a smart pointer that knows how to
 //iterate through tha tree.
 
+#define SWAP(x,y) {x=x+y; y=x-y; x=x-y;}
+
 template <class T>
 class BinaryTree;
 
@@ -44,7 +46,7 @@ class BinaryTree
   public:
     BinaryTree(); 
     ~BinaryTree();
-    BinaryTree<T>& operator=(BinaryTree<T> *&);
+    BinaryTree<T>& operator=(BinaryTree<T> &);
 
     BinaryIterator<T>& find(T to_find);
     BinaryIterator<T>& begin();
@@ -56,7 +58,7 @@ class BinaryTree
     int max_size();
     int insert(T); 
     void swap(BinaryTree<T>&);
-    int clear();
+    void clear();
     //int erase(T & to_remove);
     //BinaryIterator<T>& erase(BinaryIterator<T> & to_delete);
     //BinaryIterator<T>& erase(BinaryIterator<T> & start, 

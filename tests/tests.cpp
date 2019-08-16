@@ -8,7 +8,7 @@
 
 //This is my personal testing file
 
-#include "tree.h"
+#include "../tree.h"
 using namespace std;
 
 void testBinaryTree()

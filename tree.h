@@ -32,9 +32,18 @@ class BinaryIterator
     ~BinaryIterator();
     BinaryIterator<T>& operator=(BinaryIterator<T> &);
     BinaryIterator<T>& operator++();
+    BinaryIterator<T>& operator++(int);
     BinaryIterator<T>& operator--();
+    BinaryIterator<T>& operator--(int);
     bstNode<T>& operator*();
     bstNode<T>* operator->();
+    bool operator==(BinaryIterator<T> &);
+    bool operator!=(BinaryIterator<T> &);
+    bool operator<(BinaryIterator<T> &);
+    bool operator>(BinaryIterator<T> &);
+    bool operator<=(BinaryIterator<T> &);
+    bool operator>=(BinaryIterator<T> &); 
+
   private:
     friend class BinaryTree<T>;
     bstNode<T>* cur;
@@ -77,7 +86,7 @@ class BinaryTree
     int height(bstNode<T>*);
     int clear(bstNode<T>*&);
     int count(bstNode<T>*, T&) const;
-    void test_display(bstNode<T>*);
+    void test_display(bstNode<T>*, int);
 };
 
 #include "tree.cpp"

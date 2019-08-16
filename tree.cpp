@@ -37,7 +37,7 @@ BinaryIterator<T>& BinaryIterator<T>::operator=(BinaryIterator<T> & copy)
 template <class T>
 bstNode<T>& BinaryIterator<T>::operator*()
 {
-  return cur;
+  return *cur;
 }
 
 template <class T>
@@ -46,30 +46,101 @@ bstNode<T>* BinaryIterator<T>::operator->()
   return cur;
 }
 
+//Turns out Iterating through a tree is really hard.
 template <class T>
 BinaryIterator<T>& BinaryIterator<T>::operator++()
 {
   if (cur->right)
-    cur = cur->right;
-  else
   {
-    if (cur->parent && (cur->parent->data >= cur->data))
-      cur = cur->parent;
+    cur = cur->right;
+    while (cur->left)
+      cur = cur->left;
+  }
+  else if (cur->parent)
+  {
+      while (cur->parent->data <= cur->data)
+        cur = cur->parent;
+      if (cur->parent && (cur->parent->data > cur->data))
+       cur = cur->parent;
   }
   return *this;   
+}
+
+template <class T>
+BinaryIterator<T>& BinaryIterator<T>::operator++(int)
+{
+  return operator++();
 }
 
 template <class T>
 BinaryIterator<T>& BinaryIterator<T>::operator--()
 {
   if (cur->left)
-    cur = cur->left;
-  else
   {
-    if (cur->parent && (cur->parent->data <= cur->data))
-      cur = cur->parent;
+    cur = cur->left;
+    while (cur->right)
+      cur = cur->right;
+  }
+  else if (cur->parent)
+  {
+      while (cur->parent->data >= cur->data)
+        cur = cur->parent;
+      if (cur->parent && (cur->parent->data < cur->data))
+       cur = cur->parent;
   }
   return *this;
+}
+
+template <class T>
+BinaryIterator<T>& BinaryIterator<T>::operator--(int)
+{
+  return operator--();
+}
+
+template <class T>
+bool BinaryIterator<T>::operator==(BinaryIterator<T> & check)
+{ 
+  if (cur->data == check->data)
+    return true;
+  return false; 
+}
+
+template <class T>
+bool BinaryIterator<T>::operator!=(BinaryIterator<T> & check)
+{
+  return (!operator==(check));
+}
+
+template <class T>
+bool BinaryIterator<T>::operator<(BinaryIterator<T> & check)
+{
+  if ((cur->data) < (check->data))
+    return true;
+  return false;
+}
+
+template <class T>
+bool BinaryIterator<T>::operator>(BinaryIterator<T> & check)
+{
+  if ((cur->data) > (check->data))
+    return true;
+  return false;
+}
+
+template <class T>
+bool BinaryIterator<T>::operator<=(BinaryIterator<T> & check)
+{
+  if (operator<(check) || operator==(check))
+    return true;
+  return false;
+}
+
+template <class T>
+bool BinaryIterator<T>::operator>=(BinaryIterator<T> & check)
+{
+  if (operator>(check) || operator==(check))
+    return true;
+  return false;
 }
 
 
@@ -322,20 +393,23 @@ int BinaryTree<T>::count(bstNode<T>* root, T & data) const
 
 //Outputs contents of tree in-order to standard out.
 template <class T>
-void BinaryTree<T>::test_display(bstNode<T>* root)
+void BinaryTree<T>::test_display(bstNode<T>* root, int level)
 {
   if (root == NULL)
     return;
-  test_display(root->left);
-  cout << " -> " << root->data;
-  test_display(root->right);
+  int height = level;
+  ++level;
+  test_display(root->left, level);
+  cout << " -> (height: " << height << ") " << root->data;
+  test_display(root->right, level);
 }
 
 template <class T>
 void BinaryTree<T>::test_display()
 {
+  int level = 0;
   cout << "In-order traversal";
-  test_display(root);
+  test_display(root, level);
   cout << endl;
 }
 

@@ -17,6 +17,18 @@ functionality in an STL container. Therefore, the
 end goal will be efficiently implemented tree class
 templates that should be easy to utilize in any project.
 
+## How to install
+*Note*: I followed [this video](https://www.youtube.com/watch?v=nnP81fMdWcg&t=264s)
+when figuring out how to make a shared library. Don't know if that counts as plagiarism
+when followed so I am including this just in case.
+
+1. Clone or download the contents of the repo.
+2. Type "make" to make the shared object (.so) file and tests, or just "make cpptrees" to
+make the .so file alone.
+3. Find where in your system libraries are stored (I used one of the four places in linux
+systems: usr/lib) and mv the .so file there.
+> Note: This likely requires administrator privileges.
+4. Include the library in whatever .cpp file you'd like to use it in. 
 
 ## How to use
 

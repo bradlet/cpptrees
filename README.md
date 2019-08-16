@@ -30,6 +30,9 @@ systems: usr/lib) and mv the .so file there.
 > Note: This likely requires administrator privileges.
 4. Include the library in whatever .cpp file you'd like to use it in. 
 
+**ALTERNATIVELY JUST #include "tree.h" WITH tree.cpp AND tree.h IN THE CWD IF YOU WANT
+TO USE THIS WITHOUT THE HASTLE OF INSTALLING AS A LIBRARY (OR DON'T HAVE ADMIN PRIVELEGES)**
+
 ## How to use
 
 If you know how to use the average STL container, you can use cpptrees.

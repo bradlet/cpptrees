@@ -5,12 +5,12 @@
 
 #include <iostream>
 
-//This file contains the Binary Search Tree class definition.
+//This file contains the Binary Search Tree class definition,
+//as well as the Iterator for that class template. That iterator,
+//BinaryIterator, is essentially a smart pointer that knows how to
+//iterate through tha tree.
 
-/*
-First phase container methods to provide:
-(maybe)rbegin, rend, erase,
-*/
+#define SWAP(x,y) {x=x+y; y=x-y; x=x-y;}
 
 template <class T>
 class BinaryTree;
@@ -32,9 +32,18 @@ class BinaryIterator
     ~BinaryIterator();
     BinaryIterator<T>& operator=(BinaryIterator<T> &);
     BinaryIterator<T>& operator++();
+    BinaryIterator<T>& operator++(int);
     BinaryIterator<T>& operator--();
+    BinaryIterator<T>& operator--(int);
     bstNode<T>& operator*();
     bstNode<T>* operator->();
+    bool operator==(BinaryIterator<T> &);
+    bool operator!=(BinaryIterator<T> &);
+    bool operator<(BinaryIterator<T> &);
+    bool operator>(BinaryIterator<T> &);
+    bool operator<=(BinaryIterator<T> &);
+    bool operator>=(BinaryIterator<T> &); 
+
   private:
     friend class BinaryTree<T>;
     bstNode<T>* cur;
@@ -46,7 +55,7 @@ class BinaryTree
   public:
     BinaryTree(); 
     ~BinaryTree();
-    BinaryTree<T>& operator=(BinaryTree<T> *&);
+    BinaryTree<T>& operator=(BinaryTree<T> &);
 
     BinaryIterator<T>& find(T to_find);
     BinaryIterator<T>& begin();
@@ -58,7 +67,7 @@ class BinaryTree
     int max_size();
     int insert(T); 
     void swap(BinaryTree<T>&);
-    int clear();
+    void clear();
     //int erase(T & to_remove);
     //BinaryIterator<T>& erase(BinaryIterator<T> & to_delete);
     //BinaryIterator<T>& erase(BinaryIterator<T> & start, 
@@ -77,7 +86,7 @@ class BinaryTree
     int height(bstNode<T>*);
     int clear(bstNode<T>*&);
     int count(bstNode<T>*, T&) const;
-    void test_display(bstNode<T>*);
+    void test_display(bstNode<T>*, int);
 };
 
 #include "tree.cpp"
